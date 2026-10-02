@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>联机五子棋 · 在线对弈</title>
-<meta name="description" content="联机五子棋——宣纸朱砂风的在线五子棋对弈平台。真人对战、AI 对弈、段位排行、外观装扮，点击即玩。">
+<meta name="description" content="联机五子棋——宣纸朱砂风的在线五子棋对弈平台。真人对战、AI 对弈、任务福利、个性装扮、对局复盘，点击即玩。">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='2' width='28' height='28' rx='6' fill='%23b5443a'/%3E%3Ctext x='16' y='23' font-size='18' text-anchor='middle' fill='%23f8f2e3' font-family='KaiTi,楷体,serif' font-weight='bold'%3E弈%3C/text%3E%3C/svg%3E">
 <style>
 :root{
@@ -43,26 +43,29 @@ a{text-decoration:none;color:inherit}
 .top .nav-cta:hover{background:var(--cinnabar-deep);transform:translateY(-1px)}
 
 /* ===== 首屏 ===== */
-.hero{position:relative;text-align:center;padding:34px 0 0}
-.hero .seal-big{width:58px;height:58px;margin:0 auto 18px;background:var(--cinnabar);color:#f8f2e3;border-radius:9px;display:grid;place-items:center;font-size:26px;font-weight:700;letter-spacing:1px;line-height:1.1;transform:rotate(-4deg);box-shadow:0 6px 16px rgba(181,68,58,.32)}
-.hero h1{font-size:56px;font-weight:700;letter-spacing:10px;text-indent:10px}
-.hero .tagline{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:16px;color:var(--ink-soft);font-size:16px;letter-spacing:4px}
-.hero .tagline::before,.hero .tagline::after{content:"";width:44px;height:1px;background:var(--ink-faint)}
-.hero .sub{margin-top:14px;color:var(--ink-soft);font-size:14px;letter-spacing:2px}
-.hero .cta-row{margin-top:30px;display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
-.btn-primary{display:inline-block;font-family:var(--kai);font-size:19px;font-weight:700;letter-spacing:4px;text-indent:4px;color:#f8f2e3;background:var(--cinnabar);padding:14px 46px;border-radius:999px;box-shadow:0 8px 22px rgba(181,68,58,.34);transition:background .12s,transform .12s}
+.hero{position:relative;z-index:2}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding:30px 0 10px}
+.hero-copy .seal-big{width:58px;height:58px;background:var(--cinnabar);color:#f8f2e3;border-radius:9px;display:grid;place-items:center;font-size:26px;font-weight:700;transform:rotate(-4deg);box-shadow:0 6px 16px rgba(181,68,58,.32);margin-bottom:20px}
+.hero-copy h1{font-size:54px;font-weight:700;letter-spacing:10px}
+.hero-copy .tagline{display:flex;align-items:center;gap:14px;margin-top:16px;color:var(--ink-soft);font-size:16px;letter-spacing:4px}
+.hero-copy .tagline::before{content:"";width:44px;height:1px;background:var(--ink-faint)}
+.hero-copy .sub{margin-top:12px;color:var(--ink-soft);font-size:15px;letter-spacing:2px}
+.hero-copy .cta-row{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap}
+.btn-primary{display:inline-block;font-family:var(--kai);font-size:19px;font-weight:700;letter-spacing:4px;text-indent:4px;color:#f8f2e3;background:var(--cinnabar);padding:14px 44px;border-radius:999px;box-shadow:0 8px 22px rgba(181,68,58,.34);transition:background .12s,transform .12s}
 .btn-primary:hover{background:var(--cinnabar-deep);transform:translateY(-2px)}
-.btn-ghost{display:inline-block;font-size:15px;color:var(--ink);border:1px solid rgba(51,44,34,.38);padding:13px 34px;border-radius:999px;letter-spacing:2px;transition:background .12s}
+.btn-ghost{display:inline-block;font-size:15px;color:var(--ink);border:1px solid rgba(51,44,34,.38);padding:13px 32px;border-radius:999px;letter-spacing:2px;transition:background .12s}
 .btn-ghost:hover{background:rgba(51,44,34,.06)}
-.hero .free-note{margin-top:14px;font-size:13px;color:var(--ink-soft);letter-spacing:2px}
+.hero-copy .free-note{margin-top:14px;font-size:13px;color:var(--ink-soft);letter-spacing:2px}
 
-/* 首屏大图裱框 */
-.shot-frame{background:var(--card);border:1px solid rgba(51,44,34,.22);border-radius:12px;padding:10px;box-shadow:0 26px 60px rgba(51,44,34,.20),0 6px 16px rgba(51,44,34,.10)}
-.shot-frame img{border-radius:7px;width:100%}
-.hero-shot{position:relative;z-index:2;max-width:920px;margin:44px auto 0}
+/* 手机框 */
+.phone{background:var(--ink-bar);border-radius:38px;padding:9px;box-shadow:0 26px 52px rgba(51,44,34,.26),0 5px 14px rgba(51,44,34,.12)}
+.phone img{border-radius:29px;width:100%}
+.hero-phone{width:min(320px,80%);margin:0 auto;transform:rotate(2deg)}
+.hero-phone .phone{transform:rotate(0)}
+.hero-note{text-align:center;margin-top:16px;font-size:13px;color:var(--ink-soft);letter-spacing:2px}
 
 /* 远山 */
-.hills{position:relative;z-index:1;margin-top:-64px;pointer-events:none}
+.hills{position:relative;z-index:1;margin-top:-40px;pointer-events:none}
 .hills svg{display:block;width:100%;height:150px}
 
 /* ===== 区块标题 ===== */
@@ -73,19 +76,20 @@ section{padding:72px 0}
 .sec-head .rule{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:16px;color:var(--ink-soft);font-size:14px;letter-spacing:3px}
 .sec-head .rule::before,.sec-head .rule::after{content:"";width:40px;height:1px;background:var(--ink-faint)}
 
-/* ===== 实景展示 ===== */
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
-.shot{background:var(--card);border:1px solid rgba(51,44,34,.18);border-radius:12px;padding:10px 10px 16px;box-shadow:0 14px 34px rgba(51,44,34,.13);transition:transform .12s,box-shadow .12s}
-.shot:nth-child(1){transform:rotate(-.7deg)}
-.shot:nth-child(3){transform:rotate(.7deg)}
-.shot:hover{transform:translateY(-5px) rotate(0);box-shadow:0 22px 44px rgba(51,44,34,.18)}
-.shot img{border-radius:7px;border:1px solid var(--ink-faint)}
-.shot figcaption{padding:14px 8px 0;text-align:center}
+/* ===== 手机框画廊（横向滑动） ===== */
+.gallery-alt{background:var(--paper-2);border-top:1px solid var(--ink-faint);border-bottom:1px solid var(--ink-faint)}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:296px;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px 4px 18px;align-items:start;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.rail>*{scroll-snap-align:center}
+.shot{text-align:center}
+.shot .phone{transition:transform .12s,box-shadow .12s}
+.shot:hover .phone{transform:translateY(-5px)}
+.shot figcaption{padding:16px 10px 0}
 .shot b{display:block;font-size:17px;letter-spacing:3px}
-.shot span{display:block;margin-top:6px;font-size:13px;color:var(--ink-soft);letter-spacing:1px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
+.shot span{display:block;margin-top:6px;font-size:13px;color:var(--ink-soft);letter-spacing:1px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.7}
+.rail-hint{display:none;text-align:center;font-size:12px;color:var(--ink-soft);letter-spacing:2px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
 
 /* ===== 特色 ===== */
-.features-alt{background:var(--paper-2);border-top:1px solid var(--ink-faint);border-bottom:1px solid var(--ink-faint)}
 .feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .feat{background:var(--card);border:1px solid rgba(51,44,34,.16);border-radius:12px;padding:26px 20px;transition:transform .12s,box-shadow .12s}
 .feat:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(51,44,34,.12)}
@@ -94,7 +98,7 @@ section{padding:72px 0}
 .feat b{display:block;font-size:18px;letter-spacing:3px;margin-bottom:8px}
 .feat span{font-size:13px;color:var(--ink-soft);letter-spacing:1px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.7}
 
-/* ===== 底部行动区 ===== */
+/* ===== 行动区 ===== */
 .final{position:relative;text-align:center;padding:96px 0;overflow:hidden}
 .final .seal-foot{width:48px;height:48px;margin:0 auto 20px;background:var(--cinnabar);color:#f8f2e3;border-radius:8px;display:grid;place-items:center;font-size:22px;font-weight:700;transform:rotate(-4deg);box-shadow:0 5px 14px rgba(181,68,58,.3)}
 .final h2{font-size:36px;letter-spacing:8px;text-indent:8px}
@@ -103,12 +107,14 @@ section{padding:72px 0}
 
 /* ===== 页脚 ===== */
 footer{background:var(--ink-bar);color:rgba(243,236,220,.82)}
-footer .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:22px;padding-bottom:22px;flex-wrap:wrap;gap:10px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:22px;padding-bottom:10px;flex-wrap:wrap;gap:10px}
 footer .f-brand{display:flex;align-items:center;gap:10px;font-size:15px;letter-spacing:3px}
 footer .f-seal{width:26px;height:26px;background:var(--cinnabar);color:#f8f2e3;border-radius:5px;display:grid;place-items:center;font-size:13px;transform:rotate(-4deg)}
 footer .f-meta{font-size:13px;letter-spacing:1px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;color:rgba(243,236,220,.55)}
 footer .f-cta{font-size:14px;font-weight:700;letter-spacing:3px;color:#f8f2e3;background:var(--cinnabar);padding:8px 22px;border-radius:999px;transition:background .12s}
 footer .f-cta:hover{background:var(--cinnabar-deep)}
+footer .f-credit{display:block;text-align:center;padding:0 24px 18px;font-size:12px;letter-spacing:1px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;color:rgba(243,236,220,.42)}
+footer .f-credit a{color:rgba(243,236,220,.60);text-decoration:underline;text-underline-offset:3px}
 
 /* ===== 入场动画 ===== */
 .reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
@@ -117,15 +123,21 @@ footer .f-cta:hover{background:var(--cinnabar-deep)}
 
 /* ===== 响应式 ===== */
 @media (max-width:860px){
-  .gallery{grid-template-columns:1fr;max-width:560px;margin:0 auto}
+  .hero-grid{grid-template-columns:1fr;gap:34px;padding-top:18px}
+  .hero-copy{text-align:center}
+  .hero-copy .tagline{justify-content:center}
+  .hero-copy .tagline::before{display:none}
+  .hero-copy .cta-row{justify-content:center}
   .feat-grid{grid-template-columns:repeat(2,1fr)}
-  .hero h1{font-size:42px;letter-spacing:6px}
+  .rail{grid-auto-columns:272px}
+  .rail-hint{display:block;margin-top:4px}
 }
 @media (max-width:480px){
   section{padding:56px 0}
-  .hero h1{font-size:34px}
+  .hero-copy h1{font-size:38px;letter-spacing:6px}
   .feat-grid{grid-template-columns:1fr}
   .btn-primary{font-size:17px;padding:13px 38px}
+  .rail{grid-auto-columns:246px;gap:18px}
 }
 </style>
 </head>
@@ -138,17 +150,22 @@ footer .f-cta:hover{background:var(--cinnabar-deep)}
 
 <!-- 首屏 -->
 <div class="wrap hero">
-  <div class="seal-big">对弈</div>
-  <h1>联机五子棋</h1>
-  <div class="tagline">黑白先后 · 十五路</div>
-  <p class="sub">真人对战 · AI 对弈 · 段位天梯 · 个性装扮</p>
-  <div class="cta-row">
-    <a class="btn-primary" href="http://47.104.238.201:3000/">开始对弈</a>
-    <a class="btn-ghost" href="#shots">看看实景</a>
-  </div>
-  <p class="free-note">免费开玩 · 注册即战 · 支持手机与电脑</p>
-  <div class="shot-frame hero-shot reveal">
-    <img src="assets/lobby.jpg" alt="联机五子棋大厅实景：玩家对战与挑战 AI 双入口" width="1280" height="800">
+  <div class="hero-grid">
+    <div class="hero-copy reveal">
+      <div class="seal-big">对弈</div>
+      <h1>联机五子棋</h1>
+      <div class="tagline">黑白先后 · 十五路</div>
+      <p class="sub">真人对战 · AI 对弈 · 任务福利 · 个性装扮 · 对局复盘</p>
+      <div class="cta-row">
+        <a class="btn-primary" href="http://47.104.238.201:3000/">开始对弈</a>
+        <a class="btn-ghost" href="#shots">看看实景</a>
+      </div>
+      <p class="free-note">免费开玩 · 注册即战 · 手机电脑都能玩</p>
+    </div>
+    <div class="hero-phone reveal">
+      <div class="phone"><img src="assets/home.jpg" alt="联机五子棋 v1.6 主页实景：排行榜、任务中心、商城三大入口与对战模式" width="560" height="1063"></div>
+      <p class="hero-note">v1.6 稳定版 · 真机界面</p>
+    </div>
   </div>
 </div>
 
@@ -159,42 +176,50 @@ footer .f-cta:hover{background:var(--cinnabar-deep)}
   </svg>
 </div>
 
-<!-- 实景展示 -->
-<section id="shots">
+<!-- 手机框画廊 -->
+<section id="shots" class="gallery-alt">
   <div class="wrap">
     <div class="sec-head reveal">
       <div class="eyebrow">真实界面</div>
       <h2>对弈实景</h2>
       <div class="rule">所见即所玩</div>
     </div>
-    <div class="gallery">
+    <div class="rail">
       <figure class="shot reveal">
-        <img src="assets/game.jpg" alt="对弈实景：木纹棋枰与云子质感的棋子" loading="lazy" width="1200" height="750">
-        <figcaption>
-          <b>棋枰之上</b>
-          <span>木纹棋枰 · 云子质感棋子，支持悔棋、AI 提示与局内聊天</span>
-        </figcaption>
+        <div class="phone"><img src="assets/replay.jpg" alt="对局详情：逐手复盘滑杆与保存分享图" loading="lazy" width="560" height="973"></div>
+        <figcaption><b>对局复盘</b><span>逐手回放滑杆，胜负手一目了然，可保存对局分享图</span></figcaption>
       </figure>
       <figure class="shot reveal">
-        <img src="assets/shop.jpg" alt="外观商店：玄墨、云子玉、琥珀、青花棋子皮肤" loading="lazy" width="1200" height="750">
-        <figcaption>
-          <b>个性装扮</b>
-          <span>玄墨 / 云子玉 / 琥珀 / 青花四套棋子皮肤，棋盘随心换</span>
-        </figcaption>
+        <div class="phone"><img src="assets/tasks.jpg" alt="任务中心：每日签到与每日每周任务领金币" loading="lazy" width="560" height="973"></div>
+        <figcaption><b>任务中心</b><span>每日签到连签递增，每日每周任务做完直接领金币</span></figcaption>
       </figure>
       <figure class="shot reveal">
-        <img src="assets/profile.jpg" alt="我的页：对战统计与战绩记录" loading="lazy" width="1200" height="750">
-        <figcaption>
-          <b>档案成长</b>
-          <span>段位积分、对战统计与战绩回顾，见证每一局的进步</span>
-        </figcaption>
+        <div class="phone"><img src="assets/mail.jpg" alt="站内信：官方公告与福利邮件一键领取" loading="lazy" width="560" height="1063"></div>
+        <figcaption><b>站内信</b><span>官方公告与福利直达，带奖励的邮件一键领取</span></figcaption>
+      </figure>
+      <figure class="shot reveal">
+        <div class="phone"><img src="assets/mall.jpg" alt="商城：门票优惠礼包与棋子皮肤" loading="lazy" width="560" height="1214"></div>
+        <figcaption><b>商城</b><span>门票礼包每周三购，玄墨云子玉等棋子皮肤随心换</span></figcaption>
+      </figure>
+      <figure class="shot reveal">
+        <div class="phone"><img src="assets/rank.jpg" alt="AI 排行榜：段位积分座次" loading="lazy" width="560" height="973"></div>
+        <figcaption><b>段位天梯</b><span>AI 排行榜实时座次，胜负积分一路向上</span></figcaption>
+      </figure>
+      <figure class="shot reveal">
+        <div class="phone"><img src="assets/news.jpg" alt="更新公告：版本内容分组归档" loading="lazy" width="560" height="973"></div>
+        <figcaption><b>更新公告</b><span>版本内容分组归档，每次焕新第一时间知晓</span></figcaption>
+      </figure>
+      <figure class="shot reveal">
+        <div class="phone"><img src="assets/about.jpg" alt="关于本作：开发团队与开源鸣谢" loading="lazy" width="560" height="973"></div>
+        <figcaption><b>关于本作</b><span>开发团队、鸣谢与技术栈，坦诚相见</span></figcaption>
       </figure>
     </div>
+    <p class="rail-hint">← 左右滑动查看更多 →</p>
   </div>
 </section>
 
 <!-- 特色 -->
-<section class="features-alt">
+<section>
   <div class="wrap">
     <div class="sec-head reveal">
       <div class="eyebrow">玩法一览</div>
@@ -205,22 +230,22 @@ footer .f-cta:hover{background:var(--cinnabar-deep)}
       <div class="feat reveal">
         <div class="icon"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><path d="M2.5 19c0-3.2 2.4-5.5 5.5-5.5s5.5 2.3 5.5 5.5"/><circle cx="16.5" cy="9" r="2.4"/><path d="M14.5 13.6c.6-.2 1.3-.3 2-.3 2.8 0 5 2 5 4.7"/></svg></div>
         <b>真人对战</b>
-        <span>创建房间、好友邀请、金豆押注，与真人隔枰手谈。</span>
+        <span>开房邀请好友，或加入好友房间，真人实时隔枰手谈。</span>
       </div>
       <div class="feat reveal">
         <div class="icon"><svg viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="10" rx="2"/><path d="M12 8V5M12 5h.01"/><circle cx="9" cy="13" r="1.2"/><circle cx="15" cy="13" r="1.2"/></svg></div>
         <b>人机对弈</b>
-        <span>Rapfi 引擎三档难度，新手到高手都能找到对手。</span>
+        <span>新手 / 中等 / 困难三档 AI，段位成绩计入排行榜。</span>
       </div>
       <div class="feat reveal">
         <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 20V12M10 20V6M16 20v-6"/><path d="M2 20h20"/></svg></div>
-        <b>段位排行</b>
-        <span>积分天梯一路向上，每日一键签到领金币。</span>
+        <b>任务与福利</b>
+        <span>每日签到、每周任务、站内信福利，金币门票拿到手软。</span>
       </div>
       <div class="feat reveal">
         <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 5h9l7 7-7 7-7-7V5z"/><circle cx="9" cy="9.5" r="1.4"/></svg></div>
-        <b>外观商店</b>
-        <span>棋子、棋盘皮肤与专属称号，拼出你的风格。</span>
+        <b>装扮与复盘</b>
+        <span>棋子棋盘皮肤、门票礼包，对局逐手复盘可存分享图。</span>
       </div>
     </div>
   </div>
@@ -239,9 +264,10 @@ footer .f-cta:hover{background:var(--cinnabar-deep)}
 <footer>
   <div class="wrap">
     <div class="f-brand"><span class="f-seal">弈</span>联机五子棋</div>
-    <span class="f-meta">宣纸朱砂 · v1.4 稳定版</span>
+    <span class="f-meta">宣纸朱砂 · v1.6 稳定版</span>
     <a class="f-cta" href="http://47.104.238.201:3000/">立即开局</a>
   </div>
+  <span class="f-credit">AI 引擎移植自开源项目 <a href="https://github.com/lihongxun945/gobang" target="_blank" rel="noopener">gobang</a> · Node.js / WebSocket / Canvas · 本作仅供学习交流使用</span>
 </footer>
 
 <script>
@@ -252,7 +278,7 @@ footer .f-cta:hover{background:var(--cinnabar-deep)}
     entries.forEach(function(en){
       if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}
     })
-  },{threshold:.12});
+  },{threshold:.1});
   els.forEach(function(e){io.observe(e)});
 })();
 </script>
